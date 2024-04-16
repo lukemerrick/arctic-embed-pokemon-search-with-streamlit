@@ -1,5 +1,5 @@
 """
-Pokemon search application in streamlit, using the 
+Pokemon search application in streamlit, using a Snowflake arctic-embed model.
 """
 
 import os
