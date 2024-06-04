@@ -6,3 +6,5 @@ seaborn
 streamlit
 ipywidgets
 tqdm
+requests
+beautifulsoup4
