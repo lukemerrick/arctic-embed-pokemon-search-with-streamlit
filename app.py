@@ -10,6 +10,7 @@ from tqdm.auto import tqdm
 import pandas as pd
 import streamlit as st
 import torch
+import torch.backends.mps
 from transformers.models.auto import AutoModel, AutoTokenizer
 
 from streamlit_search_ui import Document
@@ -17,7 +18,7 @@ from streamlit_search_ui import Result
 from streamlit_search_ui import search_app
 
 # Constants.
-DEVICE = "mps"  # Mac hardware acceleration.
+DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"  # Mac hardware acceleration.
 MODEL_NAME = "Snowflake/snowflake-arctic-embed-xs"
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 TOP_K = 5
